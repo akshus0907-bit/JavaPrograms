@@ -1,4 +1,4 @@
-/*Remove duplicate characters from a string.*/
+/*43Remove duplicate characters from a string.*/
 import java.util.*;
 public class RemoveDuplQ43{
 	public static void main(String[]args){
