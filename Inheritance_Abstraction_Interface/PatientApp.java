@@ -19,13 +19,47 @@ Enter Room Number: 102
 Output
 Name: Ravi, Age: 45, Room No: 101
 Name: Meena, Age: 30, Room No: 102*/
-
 import java.util.*;
-class Patient{
-	String name;
-	int age;
+ class Patient{
+	 String name;
+	 int age;
+	 
+	 void display(){
+		 System.out.println("name="+name+"\nage="+age);
+	 }
+ }
+ class Inpatient extends Patient{
+	 int roomNumber;
+	 
+	 void display(){
+		 super.display();
+		 System.out.println("room number"+roomNumber);
+	 }
+ }
+ public class PatientApp{
+	 public static void main(String[]args){
+		 Scanner in=new Scanner(System.in);
+		 System.out.println("enter number of patient");
+		 int n=in.nextInt();
+		 in.nextLine();
+		 
+		 Inpatient p[]=new Inpatient[n];
+		 for(int i=0;i<n;i++) {
+			p[i] = new Inpatient();
+
+			System.out.print("Enter Name: ");
+			p[i].name = in.nextLine();
+
+			System.out.print("Enter Age: ");
+			p[i].age = in.nextInt();
+
+			System.out.print("Enter Room Number: ");
+			p[i].roomNumber = in.nextInt();
+
+			in.nextLine();   
 }
-class  InPatient extends  Patient{
-	int roomNumber;
-}
-public 
+		 for(int i=0;i<n;i++){
+          p[i].display();
+		 }
+	 }
+ }	 
