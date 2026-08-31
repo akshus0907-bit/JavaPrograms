@@ -1,0 +1,3 @@
+laptop 3000
+mobile 33
+monus 2
