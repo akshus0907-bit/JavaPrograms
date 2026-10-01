@@ -37,7 +37,7 @@ public class DisplayNumber{
 		System.out.println("enter limit");
 		int limit=in.nextInt();
 		
-		MyThread t=new MyThread(limit);
+		// MyThread t=new MyThread(limit);
 		t.start();
 	}
 }

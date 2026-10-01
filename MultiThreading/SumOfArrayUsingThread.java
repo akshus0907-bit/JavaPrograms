@@ -13,3 +13,12 @@ Total sum: 210
 
 Explanation:
 Divide large array into smaller segments and process each segment in separate thread for parallel computation. Each thread calculates partial sum independently. Main thread collects results and computes total sum. Demonstrates performance improvement through parallel processing of data.*/
+
+import java.util.*;
+class MyThread extends Thread{
+	public void run(){
+	}
+}
+public class SumOfArrayUsingThread{
+	public static void main(String[]args){
+		Scanner in=new Scanner(System.in);
