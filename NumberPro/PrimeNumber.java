@@ -15,6 +15,10 @@ public class PrimeNumber{
 		  int sum=0;
 		  int count=0;
 		  for(int i=start;i<=end;i++){
+			  if(i<2){
+				  prime=false;
+			  }
+			  
 			    boolean prime=true;
 			  for(int j=2;j<i;j++){
 				  if(i%j==0){
