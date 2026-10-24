@@ -1,0 +1,42 @@
+package org.techhub;
+import java.io.*;
+import java.sql.*;
+
+public class ReadCSVApplication {
+public static void main(String[]args) throws Exception{
+	FileReader fr=new FileReader(""
+			+ "C:\\java program giri's\\JDBC\\emp.csv"
+			);
+	BufferedReader br=new BufferedReader(fr);
+	String data;
+	int value=0;
+	
+	Class.forName("com.mysql.cj.jdbc.Driver");
+	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbcpractice","root","root");
+	if(con!=null) {
+		while((data=br.readLine()) != null) {
+			String cols[]=data.split(",");
+			
+			PreparedStatement stmt=con.prepareStatement("insert into employee values(?,?,?)");
+			stmt.setInt(1, Integer.parseInt(cols[0]));
+			stmt.setString(2, cols[1]);
+			stmt.setInt(3, Integer.parseInt(cols[2]));
+			value=stmt.executeUpdate();
+			
+		}
+		if(value>0) {
+			System.out.println("data save sucess");
+			
+		}
+		else {
+			System.out.println("data not save");
+		}
+		
+	}
+	
+	else {
+		System.out.println("database is not connected");
+	}
+	
+}
+}
